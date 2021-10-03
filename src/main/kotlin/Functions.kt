@@ -23,6 +23,24 @@ class Person(val name: String) {
     }
 }
 
+operator fun Int.times(str: String) = str.repeat(this)
+
+operator fun String.get(range: IntRange) = substring(range)
+
+fun printAll(vararg messages: String) {
+    for (m in messages) println(m)
+}
+
+fun salutations(vararg names: String, salutation: String) {
+    for (n in names) {
+        println(salutation + " " + n)
+    }
+}
+
+fun log(vararg entries: String) {
+    printAll(*entries)
+}
+
 fun main() {
     printMessage("Hello")
     printMessageWithPrefix("Hello", "Log")
@@ -39,4 +57,13 @@ fun main() {
     devan likes gil
     println(devan.name)
     println(devan.likedPeople)
+
+    println(2 * "bye") // Uses the operator function defined above
+
+    val str = "This is a sentence"
+    println(str[0..14]) // Uses the operator function defined above
+
+    printAll("Hello", "This", "Is", "All", "Printing")
+    salutations("Devan", "Gil", "Sean", "Jose", salutation = "Greetings")
+    log("This", "That", "All of this!")
 }
