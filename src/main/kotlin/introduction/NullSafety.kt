@@ -4,6 +4,14 @@ fun strLength(notNull: String): Int {
     return notNull.length
 }
 
+fun describeString(maybeString: String?): String {
+    if (maybeString != null && maybeString.length > 0) {
+        return "String of length ${maybeString.length}"
+    } else {
+        return "Empty or null string"
+    }
+}
+
 fun main() {
     var neverNull: String = "This can't be null"
     //neverNull = null
@@ -16,4 +24,7 @@ fun main() {
 
     strLength(neverNull)
     //strLength(nullable)
+
+    println(describeString(nullable))
+    println(describeString("Hello there!"))
 }
