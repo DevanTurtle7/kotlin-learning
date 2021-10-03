@@ -1,3 +1,5 @@
+package introduction
+
 fun main() {
     var a: String = "initial" // Var is mutable
     val b: Int = 1 // val is immutable
