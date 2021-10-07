@@ -9,6 +9,8 @@ fun Order.maxPricedItemName() = this.items.maxByOrNull { it.price }?.name ?: "NO
 val Order.commaDelimitedItemNames: String
     get() = items.map { it.name }.joinToString()
 
+fun <T> T?.nullSafeToString() = this?.toString() ?: null
+
 fun main() {
     val order = Order(listOf(Item("Bread", 25.0f), Item("Wine", 29.0f), Item("Water", 12.0f)))
 
