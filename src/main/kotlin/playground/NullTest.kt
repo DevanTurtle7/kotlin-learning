@@ -1,6 +1,8 @@
 package playground
 
-fun plusPlus(int: Int?) = int?.plus(1) ?: 0
+fun plusPlus(int: Int?): Int {
+    return int?.plus(1) ?: 0
+}
 
 fun main() {
     println(plusPlus(null))
